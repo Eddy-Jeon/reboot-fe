@@ -1,0 +1,98 @@
+.monaco-editor .suggest-widget .monaco-list .monaco-list-row .suggest-icon {
+  &.codicon-symbol-field::before {
+    // Column
+    display: block;
+    background-image: url(./images/editor-icon-column.svg);
+    content: '';
+    width: 16px;
+    height: 16px;
+  }
+  &.codicon-symbol-class::before {
+    // Table
+    display: block;
+    background-image: url(./images/editor-icon-table.svg);
+    content: '';
+    width: 16px;
+    height: 16px;
+  }
+  &.codicon-symbol-struct::before {
+    // View
+    display: block;
+    background-image: url(./images/editor-icon-view.svg);
+    content: '';
+    width: 16px;
+    height: 16px;
+  }
+  &.codicon-symbol-file::before {
+    // Schema
+    display: block;
+    background-image: url(./images/editor-icon-schema.svg);
+    content: '';
+    width: 16px;
+    height: 16px;
+  }
+  &.codicon-symbol-reference::before {
+    // Subquery
+    display: block;
+    background-image: url(./images/editor-icon-subquery.svg);
+    content: '';
+    width: 16px;
+    height: 16px;
+  }
+  &.codicon-symbol-folder::before {
+    // Database
+    display: block;
+    background-image: url(./images/editor-icon-database.svg);
+    content: '';
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.monaco-editor
+  .suggest-widget
+  .details
+  > .monaco-scrollable-element
+  > .body
+  > .docs.markdown-docs {
+  blockquote {
+    color: #608b4e;
+  }
+}
+
+.monaco-editor
+  .suggest-widget
+  .details
+  > .monaco-scrollable-element
+  > .body
+  > .header
+  > .codicon-close,
+.monaco-editor
+  .suggest-widget
+  .monaco-list
+  .monaco-list-row
+  > .contents
+  > .main
+  > .readMore::before {
+  margin-left: 3px;
+}
+
+.monaco-editor .suggest-widget > .message,
+.monaco-editor .suggest-widget > .tree,
+.monaco-editor .suggest-widget > .details {
+  min-height: 18px;
+  background-color: @monaco-editor-widget-bg !important;
+  border-color: @border-default !important;
+  // color: #d2d5d9;
+
+  // .monaco-list-row:hover:not(.selected):not(.focused) {
+  //   background-color: #41474d !important;
+  // }
+
+  // .monaco-list-row.focused {
+  //   background-color: #41474d;
+  //   &:hover {
+  //     background-color: #41474d;
+  //   }
+  // }
+}

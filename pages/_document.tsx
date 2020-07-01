@@ -20,7 +20,6 @@ export default class MyDocument extends Document<any> {
             content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width"
             name="viewport"
           />
-          <title>AXBOOT</title>
           <link color="#BE9300" href="/public/favicon.png" rel="mask-icon" />
           <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
           {this.props.styleTags}

@@ -1,0 +1,65 @@
+.ant-tooltip-placement-top .ant-tooltip-arrow,
+.ant-tooltip-placement-topLeft .ant-tooltip-arrow,
+.ant-tooltip-placement-topRight .ant-tooltip-arrow {
+  border-right-color: @tooltip-bg;
+  border-bottom-color: @tooltip-bg;
+  bottom: -4px;
+  &:before {
+    border-style: solid;
+    border-width: 1px;
+    border-color: @tooltip-border-color;
+    width: 7px;
+    height: 7px;
+  }
+}
+
+.ant-tooltip-placement-bottom .ant-tooltip-arrow,
+.ant-tooltip-placement-bottomLeft .ant-tooltip-arrow,
+.ant-tooltip-placement-bottomRight .ant-tooltip-arrow {
+  border-top-color: @tooltip-bg;
+  border-left-color: @tooltip-bg;
+  top: -4px;
+  &:before {
+    border-style: solid;
+    border-width: 1px;
+    border-color: @tooltip-border-color;
+    width: 7px;
+    height: 7px;
+  }
+}
+
+.ant-tooltip-placement-right .ant-tooltip-arrow,
+.ant-tooltip-placement-rightTop .ant-tooltip-arrow,
+.ant-tooltip-placement-rightBottom .ant-tooltip-arrow {
+  border-bottom-color: @tooltip-bg;
+  border-left-color: @tooltip-bg;
+  left: -4px;
+  &:before {
+    border-style: solid;
+    border-width: 1px;
+    border-color: @tooltip-border-color;
+    width: 7px;
+    height: 7px;
+  }
+}
+
+.ant-tooltip-placement-left .ant-tooltip-arrow,
+.ant-tooltip-placement-leftTop .ant-tooltip-arrow,
+.ant-tooltip-placement-leftBottom .ant-tooltip-arrow {
+  border-top-color: @tooltip-bg;
+  border-right-color: @tooltip-bg;
+  right: -4px;
+  &:before {
+    border-style: solid;
+    border-width: 1px;
+    border-color: @tooltip-border-color;
+    width: 7px;
+    height: 7px;
+  }
+}
+
+.ant-tooltip-inner {
+  border-style: solid;
+  border-width: 1px;
+  border-color: @tooltip-border-color;
+}

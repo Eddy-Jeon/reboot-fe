@@ -1,0 +1,30 @@
+// checkbox
+.ant-checkbox-inner {
+  background: @input-bg;
+  border-color: @input-bg;
+
+  &:after {
+    left: 25%;
+  }
+}
+
+.ant-checkbox-checked {
+  .ant-checkbox-inner {
+    background: @input-bg;
+  }
+}
+
+.ant-checkbox-checked .ant-checkbox-inner::after {
+  border-color: @checkbox-active-color;
+}
+
+// radio
+.ant-radio {
+  .ant-radio-inner {
+    background: @input-bg;
+  }
+}
+
+.placeholder-icon {
+  color: @txt-disabled;
+}

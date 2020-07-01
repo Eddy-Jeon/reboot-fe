@@ -1,0 +1,126 @@
+//==
+@axui-datagrid-border: 0 solid @border-default;
+@axui-datagrid-bg: @datagrid-body;
+@axui-datagrid-font-size: 12px;
+@axui-datagrid-column-border: 1px solid @border-default;
+@axui-datagrid-outline: #eee solid 1px;
+
+//== header
+@axui-datagrid-header-column-color: @text-color;
+@axui-datagrid-header-column-border: 1px solid @border-default;
+@axui-datagrid-header-column-box-shadow: none;
+@axui-datagrid-header-column-bg-colors: @datagrid-header;
+@axui-datagrid-header-column-hover-bg-colors: darken(@datagrid-header, 10%);
+@axui-datagrid-header-column-resizer-color: #ff3300;
+@axui-datagrid-header-column-resizer-size: 4px;
+@axui-datagrid-header-column-focused-bg-colors: @datagrid-selected;
+@axui-datagrid-header-column-focused-color: @brand-50;
+@axui-datagrid-header-column-sorter-bg-color: @datagrid-column-sorter-bg;
+
+@axui-datagrid-header-sorter-size: 9px;
+@axui-datagrid-header-sorter-color: @text-color;
+
+//== aside
+@axui-datagrid-aside-border: 1px solid darken(@border-default, 0%);
+@axui-datagrid-aside-bg: @datagrid-header;
+@axui-datagrid-aside-column-shadow: none;
+@axui-datagrid-aside-column-focused-bg-colors: @datagrid-selected;
+@axui-datagrid-aside-column-focused-color: @brand-50;
+
+@axui-datagrid-frozen-line-border: 1px solid darken(@border-default, 10%);
+
+//== footsum
+@axui-datagrid-footsum-bg: #edf5ff;
+@axui-datagrid-footsum-line-border: 1px solid darken(#ccc, 10%);
+
+//== page
+@axui-datagrid-page-border: 1px solid @border-default;
+@axui-datagrid-page-bg-colors: @datagrid-status;
+@axui-datagrid-page-navigation-padding: 5px;
+@axui-datagrid-page-navigation-font-size: 12px;
+@axui-datagrid-page-navigation-btn-min-width: 20px;
+@axui-datagrid-page-navigation-btn-border: 0px none;
+@axui-datagrid-page-navigation-btn-border-radius: 5px;
+@axui-datagrid-page-navigation-btn-bg: transparent;
+@axui-datagrid-page-navigation-btn-font-size: 11px;
+@axui-datagrid-page-navigation-btn-color: #222;
+@axui-datagrid-page-navigation-btn-hover-bg: #888;
+@axui-datagrid-page-navigation-btn-hover-color: #fff;
+
+@axui-datagrid-page-status-font-size: 12px;
+@axui-datagrid-page-status-padding: 10px;
+@axui-datagrid-page-status-color: #222;
+
+//== scroll
+@axui-datagrid-scroll-track-shadow: #ccc;
+@axui-datagrid-scroll-track-border: 1px solid #ccc;
+@axui-datagrid-scroll-track-bg-blur: rgba(@scroll-track-color, 0.3);
+@axui-datagrid-scroll-track-bg: @scroll-track-color;
+
+@axui-datagrid-scroll-bar-border-radius: 5px;
+@axui-datagrid-scroll-bar-border: 0 none;
+@axui-datagrid-scroll-bar-bg: rgba(@scroll-thumb-color, 0.5);
+@axui-datagrid-scroll-bar-bg-blur: transparent;
+@axui-datagrid-scroll-bar-hover-border: 0 none;
+@axui-datagrid-scroll-bar-hover-bg: @scroll-thumb-color;
+
+//== body.row
+@axui-datagrid-last-row-border: 1px solid @border-default;
+@axui-datagrid-row-bg-0: @datagrid-body-tr-bg;
+@axui-datagrid-row-bg-1: @datagrid-body-tr-even-bg;
+@axui-datagrid-row-hover-bg: lighten(@datagrid-selected, 10%);
+@axui-datagrid-row-grouping-bg: @datagrid-header;
+@axui-datagrid-row-selected: @datagrid-selected;
+
+@axui-datagrid-row-added-bg: @datagrid-added;
+@axui-datagrid-row-added-color: @text-color;
+@axui-datagrid-row-updated-bg: @datagrid-updated;
+@axui-datagrid-row-updated-color: @text-color;
+@axui-datagrid-row-deleted-bg: @datagrid-deleted;
+@axui-datagrid-row-deleted-color: @datagrid-deleted-text;
+@axui-datagrid-row-error-bg: @datagrid-error;
+@axui-datagrid-row-error-color: @text-color;
+
+//== body.cell
+@axui-datagrid-cell-padding-row-selector: 5px;
+@axui-datagrid-cell-padding: 3px 5px;
+
+@axui-datagrid-cell-checkbox-border: 1px solid @border-default;
+@axui-datagrid-cell-checkbox-border-radius: 3px;
+@axui-datagrid-cell-checkbox-bg-colors: #ffffff, #f0f0f0;
+@axui-datagrid-cell-disable-checkbox-bg-colors-1: #ffffff;
+@axui-datagrid-cell-disable-checkbox-bg-colors-2: #f0f0f0;
+@axui-datagrid-cell-disable-checkbox-bg-colors: darken(
+    @axui-datagrid-cell-disable-checkbox-bg-colors-2,
+    10%
+  ),
+  darken(@axui-datagrid-cell-disable-checkbox-bg-colors-1, 10%);
+@axui-datagrid-cell-checkbox-arrow-color: #3372ff;
+
+@axui-datagrid-cell-focused-box-shadow: inset 0px 0px 1px 1px @brand-50;
+@axui-datagrid-cell-focused-bg: darken(@datagrid-body, 5%);
+@axui-datagrid-cell-focused-color: #000;
+
+@axui-datagrid-cell-selected-border-color: #ccc;
+@axui-datagrid-cell-selected-bg: darken(@datagrid-body, 7%);
+@axui-datagrid-cell-selected-color: #000;
+
+@axui-datagrid-cell-editInput-border: 0 none;
+@axui-datagrid-cell-updated-bg: @datagrid-updated;
+
+//== resizer
+@axui-datagrid-resizer-color: #ff3300;
+@axui-datagrid-resizer-size: 2px;
+
+//== columnFilter
+@axui-datagrid-column-filter-bg: #fff;
+@axui-datagrid-column-filter-border: @axui-datagrid-border;
+@axui-datagrid-column-filter-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+
+//== loader
+@axui-datagrid-loader-bg: rgba(0, 0, 0, 0.1);
+@axui-datagrid-loader-color: rgba(255, 255, 255, 0.1);
+@axui-datagrid-loader-second-color: #767676;
+
+// selected
+@axui-datagrid-cell-selected-bg: @datagrid-selected;

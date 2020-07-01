@@ -1,0 +1,27 @@
+.ant-select {
+  .ant-select-arrow {
+    font-size: 9px;
+    color: @select-txt;
+  }
+}
+
+.ant-select-dropdown {
+  border: 1px solid @border-default;
+  border-radius: @border-radius-base;
+  overflow: hidden;
+  padding: 0;
+}
+
+.ant-select-item {
+  border-radius: 0;
+  color: @select-txt;
+}
+.ant-select-item-option-active:not(.ant-select-item-option-disabled) {
+  background-color: @select-hover-bg;
+  color: @select-hover-txt;
+}
+.ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+  background-color: @select-active-bg;
+  color: @select-active-txt;
+  font-weight: normal;
+}

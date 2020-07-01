@@ -3,7 +3,6 @@ import { NextPage } from "next";
 import App, { AppProps } from "next/app";
 import axios from "axios";
 import { useImmerReducer } from "use-immer";
-import { defaultColors } from "styles/colors";
 import {
   ConfigContext,
   DispatchConfigContext,
@@ -11,13 +10,19 @@ import {
 } from "store/initialConfig";
 import { configReducer } from "store/configReducer";
 import { themeReducer } from "store/themeReducer";
-import { ThemeProvider } from "styled-components";
+import { ThemeProvider } from "styled";
 import defaultConfig from "store/defaultConfig";
 import { IMenuItem } from "common/@interface";
-import { Icon } from "antd";
+import { Enums } from "common";
+import {
+  PieChartOutlined,
+  DesktopOutlined,
+  TeamOutlined,
+} from "@ant-design/icons";
 
 import * as appDark from "styles/less/app-dark.less";
 import * as appLight from "styles/less/app-light.less";
+import { themePalette } from "styles/theme";
 
 interface IProps {}
 const MyApp: NextPage<AppProps & IProps, IProps> = (props) => {
@@ -26,9 +31,10 @@ const MyApp: NextPage<AppProps & IProps, IProps> = (props) => {
     configReducer,
     defaultConfig
   );
-  const [theme, dispatchTheme] = useImmerReducer(themeReducer, {
-    colors: defaultColors,
-  });
+  const [theme, dispatchTheme] = useImmerReducer(
+    themeReducer,
+    Enums.ThemeType.light
+  );
 
   useEffect(() => {
     let appStyle = document.getElementById("appStyle");
@@ -37,17 +43,17 @@ const MyApp: NextPage<AppProps & IProps, IProps> = (props) => {
       appStyle.id = "appStyle";
       document.head.appendChild(appStyle);
     }
-    console.log(appDark.toString());
-    appStyle.innerHTML = JSON.stringify(
-      theme.colors.theme === "dark" ? appDark : appLight
-    );
+    appStyle.innerHTML = (theme === Enums.ThemeType.dark
+      ? appDark
+      : appLight
+    ).toString();
   }, [theme]);
 
   return (
     <DispatchConfigContext.Provider value={dispatchConfig}>
       <ConfigContext.Provider value={config}>
         <DispatchThemeContext.Provider value={dispatchTheme}>
-          <ThemeProvider theme={theme.colors}>
+          <ThemeProvider theme={themePalette[theme]}>
             <Component {...pageProps} />
           </ThemeProvider>
         </DispatchThemeContext.Provider>
@@ -61,11 +67,11 @@ MyApp.getInitialProps = async ({ req }) => {
   // const isServer = !!req;
 
   const siderMenu: IMenuItem[] = [
-    { label: "PIE", icon: <Icon type="pie-chart" />, url: "" },
-    { label: "DESKTOP", icon: <Icon type="desktop" />, url: "" },
+    { label: "PIE", icon: <PieChartOutlined />, url: "" },
+    { label: "DESKTOP", icon: <DesktopOutlined />, url: "" },
     {
       label: "PARENT",
-      icon: <Icon type="team" />,
+      icon: <TeamOutlined />,
       url: "",
       submenu: [
         { label: "CHILD 1", url: "" },

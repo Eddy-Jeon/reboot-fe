@@ -1,0 +1,106 @@
+.ant-legacy-form {
+  color: @text-color-secondary;
+  font-size: 12px;
+  label {
+    font-size: 12px;
+  }
+}
+.ant-legacy-form-item {
+  font-size: 12px;
+  color: @text-color;
+}
+.ant-legacy-form-item-label {
+  label {
+    font-weight: normal;
+    font-size: 12px;
+    color: @txt-label;
+  }
+}
+.ant-legacy-form-item-required::before {
+  font-size: 12px;
+}
+.ant-legacy-form-item-control {
+  line-height: 1.5715;
+}
+
+.ant-legacy-form-vertical {
+  .ant-legacy-form-item-control {
+    line-height: 35px;
+    position: relative;
+  }
+  .ant-legacy-form-item {
+    font-size: 12px;
+    transition: all 0.3s ease-in-out;
+    padding-bottom: 0;
+    margin-bottom: 7px;
+    &.ant-legacy-form-item-with-help {
+      margin-bottom: 7px;
+    }
+
+    &.narrowly {
+      padding-bottom: 3px;
+      margin-bottom: 6px;
+    }
+  }
+  .ant-legacy-form-item-label {
+    padding-bottom: 3px;
+  }
+  .ant-form-explain {
+    padding: 0 5px;
+    font-size: 0.9em;
+  }
+  .ant-form-text {
+    margin-left: 1em;
+    color: @input-color;
+  }
+  .inline-formitem {
+    margin-bottom: 7px;
+    .ant-legacy-form-item-label {
+      line-height: 35px;
+      padding-bottom: 0;
+    }
+  }
+}
+
+.ant-legacy-form-explain,
+.ant-legacy-form-extra {
+  font-size: 12px;
+}
+.has-error .ant-input-affix-wrapper .ant-input,
+.has-error .ant-input-affix-wrapper .ant-input:hover {
+  background-color: @input-bg;
+}
+.has-error .ant-input,
+.has-error .ant-input:hover {
+  background-color: @input-bg;
+}
+.ant-checkbox-wrapper {
+  &.hasLongLabel {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    line-height: 1.5;
+
+    .ant-checkbox {
+      margin-top: 0.25em;
+    }
+
+    :not(.ant-checkbox) {
+      display: inline-block;
+    }
+  }
+}
+
+.ant-form-item-label {
+  label {
+    font-weight: normal;
+    font-size: 12px;
+    color: @txt-label;
+  }
+}
+
+.ant-form-label {
+  font-weight: normal;
+  font-size: 12px;
+  color: @txt-label;
+}

@@ -1,38 +1,25 @@
-import React, { useContext, useEffect } from "react";
-import { Menu, Icon } from "antd";
-import { ConfigContext } from "store/initialConfig";
-import AXBootLogo from "components/AXBootLogo";
+import React, { useContext } from "react";
 import { SMixinFlexRow, SMixinFlexColumn } from "styles/styledMixin";
-import styled, { ThemeContext } from "styled-components";
-import SiderMenu from "./sider/SiderMenu";
+import { styled } from "styled";
+import { LeftHeader, RightHeader } from "./header";
+import SiderLayout from "./sider/SiderLayout";
 
 interface IProps {}
 const MainLayout: React.FC<IProps> = ({ children }) => {
-  const config = useContext(ConfigContext);
-  const color = useContext(ThemeContext);
-
   return (
     <Wrap>
       <Layout isRoot={true}>
-        <Header>
-          {/* <Logo collapsed={config.siderCollapsed}>
-            <AXBootLogo color={color.layout_sider_text_color} />
-            <label>AXBOOT</label>
-          </Logo> */}
-        </Header>
-
         <Layout hasSider={true}>
-          <Sider width={config.siderWidth}>
-            <SiderMenu menus={config.siderMenu} />
-          </Sider>
-
+          <SiderLayout />
           <Layout>
+            <Header>
+              <LeftHeader />
+              <RightHeader />
+            </Header>
             <Content>{children}</Content>
-
             <Footer>
+              <div>QueryPie Created by CHEQUER</div>
               <div></div>
-              <div></div>
-              <div>AXBOOT ©2019 Created by CHEQUER</div>
             </Footer>
           </Layout>
         </Layout>
@@ -67,44 +54,33 @@ const Layout = styled.div<{ isRoot?: boolean; hasSider?: boolean }>`
     return ``;
   }}
 `;
+
 const Header = styled.div`
   flex: none;
+  background-color: ${(p) => p.theme.l_sidebar_bg};
   height: 60px;
+  padding-right: 10px;
+  padding-left: 20px;
+
+  ${SMixinFlexRow("space-between", "center")};
 `;
+
 const Content = styled.div`
   flex: 1;
   overflow: auto;
   padding: 24px;
+  background-color: ${(p) => p.theme.body_background};
 `;
-const Sider = styled.div<{ width?: number }>``;
+
 const Footer = styled.div`
   flex: none;
   height: 30px;
   font-size: 12px;
   padding: 0 20px;
+  background-color: ${(p) => p.theme.aside_bar_bg};
+
+  color: ${(p) => p.theme.txt_default};
   ${SMixinFlexRow("space-between", "center")};
 `;
 
-// const Logo = styled.div<{ collapsed: boolean }>`
-//   margin: 16px;
-//   height: 32px;
-//   ${SMixinFlexRow("center", "center")};
-//   svg {
-//     width: 30px;
-//     height: 30px;
-//   }
-//   label {
-//     margin: 0 10px;
-//     font-size: 18px;
-//     color: ${p => p.theme.layout_sider_text_color};
-//     font-weight: bold;
-//     letter-spacing: 1px;
-//   }
-//   ${p => {
-//     if (p.collapsed) {
-//       return `label {display: none;}`;
-//     }
-//     return "";
-//   }}
-// `;
 export default MainLayout;

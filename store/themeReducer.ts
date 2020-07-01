@@ -1,20 +1,15 @@
-import { ThemeReducer, IThemeAction, ThemeType } from "../common/@interface";
-import { defaultColors, darkColors } from "styles/colors";
-import * as appDark from "styles/less/app-dark.less";
-import * as appLight from "styles/less/app-light.less";
+import { ThemeReducer, IThemeAction } from "../common/@interface";
+import { Enums } from "../common";
 
 export const themeReducer: ThemeReducer = (state, action) => {
   const { type } = action;
 
   switch (type) {
-    case ThemeType.default:
-      state.colors = defaultColors;
+    case Enums.ThemeType.light:
+      state = Enums.ThemeType.light;
       return state;
-    case ThemeType.light:
-      state.colors = defaultColors;
-      return state;
-    case ThemeType.dark:
-      state.colors = darkColors;
+    case Enums.ThemeType.dark:
+      state = Enums.ThemeType.dark;
       return state;
     default:
       throw new Error();

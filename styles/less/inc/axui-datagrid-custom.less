@@ -1,0 +1,166 @@
+.axui-datagrid {
+  color: @txt-default;
+  border: @datagrid-border;
+  border-top: 1px solid @border-default;
+}
+.axui-datagrid-page-status {
+  font-size: 11px;
+  line-height: 1;
+}
+.axui-datagrid-scroller {
+  [data-scroll-track] {
+    transition: all 150ms linear;
+  }
+}
+
+.axui-datagrid-select-dropdown {
+  border: 1px solid @border-default;
+  font-size: @axui-datagrid-font-size;
+
+  .ant-select-dropdown-menu-item {
+    line-height: 1.3em;
+  }
+}
+
+@ant-input-height: 21px;
+.axui-datagrid {
+  .focused {
+    .ant-input,
+    .ant-input-number {
+      box-shadow: inset 0px 0px 1px 1px @axui-datagrid-cell-focused-box-shadow;
+    }
+  }
+
+  .ant-input {
+    height: @ant-input-height;
+    border: 0 none;
+    border-radius: 0;
+    font-size: inherit;
+    padding: 2px 5px;
+    background: transparent;
+  }
+  .ant-calendar-picker-clear,
+  .ant-calendar-picker-icon {
+    right: 5px;
+  }
+
+  .ant-select {
+    height: @ant-input-height;
+    font-size: @axui-datagrid-font-size;
+  }
+  .ant-select-selection {
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 0;
+  }
+  .ant-select-selection--single {
+    height: @ant-input-height;
+  }
+  .ant-select-selection__rendered {
+    line-height: @ant-input-height;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  .ant-select-arrow {
+    right: 5px;
+  }
+
+  .ant-input-number {
+    height: @ant-input-height;
+    font-size: @axui-datagrid-font-size;
+    line-height: 1;
+    border: 0 none;
+    border-radius: 0;
+  }
+  .ant-input-number-input {
+    height: @ant-input-height;
+  }
+  .ant-input-number-handler-wrap {
+    opacity: 0.5;
+    border-radius: 0;
+  }
+  .ant-checkbox-wrapper {
+    padding: 1px 5px 0 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    line-height: 1;
+    font-size: @axui-datagrid-font-size;
+    .ant-checkbox {
+      top: auto;
+    }
+    .ant-checkbox + span {
+      padding-left: 3px;
+      padding-right: 3px;
+    }
+  }
+
+  [data-inline-edit] {
+    background-color: @datagrid-editinput-bg;
+    border: 0 none;
+  }
+
+  .lob-view-data {
+    font-style: italic;
+    text-decoration: underline;
+  }
+}
+
+/// checkbox
+
+.axui-datagrid table tr:last-child td {
+  border-bottom: 1px solid @border-color-base;
+}
+.axui-datagrid table tr td {
+  border-bottom: 0px none;
+  .axui-datagrid-check-box {
+    // box-shadow: inset 0 4px 6px 0 rgba(0, 0, 0, 0.4);
+    // border-top: 1px solid #ccc;
+
+    &[data-checked='true'] {
+      background: @checkbox-active-bg;
+      box-shadow: none;
+      // border-top: 1px solid @checkbox-active-color;
+      &:after {
+        border-color: @checkbox-active-color;
+      }
+    }
+  }
+
+  [data-span] [data-sorter] {
+    font-size: 9px;
+    border-radius: 3px;
+  }
+}
+
+[data-scroll-track='horizontal'] {
+  .axui-datagrid-scroll-bar {
+    &:before {
+      content: '';
+      display: block;
+      height: 20px;
+      width: 100%;
+      transform: translateY(-8px);
+    }
+  }
+}
+
+[data-scroll-track='vertical'] {
+  .axui-datagrid-scroll-bar {
+    &:before {
+      content: '';
+      display: block;
+      height: 100%;
+      width: 20px;
+      transform: translateX(-10px);
+    }
+  }
+}
+
+.axui-datagrid table tr td.updated:before {
+  right: 0;
+  top: 0;
+  border-top: 3px solid @brand-50;
+  border-right: 3px solid @brand-50;
+}

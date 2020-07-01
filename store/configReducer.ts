@@ -10,7 +10,7 @@ export const configReducer: ConfigReducer = (state, action) => {
       state.siderWidth = value;
       return;
     case ConfigActionType.SET_SIDER_COLLAPSED:
-      state.siderCollapsed = value;
+      state.collapsed = value;
       return;
     default:
       throw new Error();

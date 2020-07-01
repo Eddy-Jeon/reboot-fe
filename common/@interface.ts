@@ -1,4 +1,4 @@
-import { Colors } from "styles/colors";
+import { Enums } from "./enums";
 import defaultConfig from "store/defaultConfig";
 
 export type IConfig = typeof defaultConfig;
@@ -17,27 +17,19 @@ export enum ConfigActionType {
 
 export type ConfigReducer = (state: IConfig, action: IConfigAction) => void;
 
-export interface ITheme {
-  colors: Colors;
-}
+export type ITheme = string;
 
 export interface IThemeAction {
-  type: ThemeType;
-}
-
-export enum ThemeType {
-  default = "default",
-  dark = "dark",
-  light = "light",
+  type: Enums.ThemeType;
 }
 
 export type ThemeReducer = (state: ITheme, action: IThemeAction) => ITheme;
 
 export interface IMenuItem {
-  label?: string;
+  label: string;
   sublabel?: string;
   type?: "normal" | "separator";
   icon?: string | React.ReactElement<any>;
   submenu?: IMenuItem[];
-  url?: string;
+  url: string;
 }
